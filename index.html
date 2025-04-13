@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" media="screen" href="interface.css" />
+		<script type="text/javascript" src="main.js"> </script>
+		<meta charset="UTF-8">
+		<meta name="description" content="Take the Quiz!">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title> QuizTaker </title>
+		<link rel="shortcut icon" type="image/png" href=""/>
+        <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.min.js"></script>
+    </head>
+    <body>
+        <div>
+            <script id="scene1-template" type="text/x-handlebars-template">
+                <form id="quiz-form">
+                    <label>Name: </label>
+                    <input type="text" name="name">
+                    <select>
+                        <option value="python">Python Quiz</option>
+                        <option value="HTML">HTML Quiz</option>
+                    </select>
+                    <input type="submit" value="Start">
+                </form>
+            </script>
+
+            <script id="scene2-template" type="text/x-handlebars-template">
+                <p>{{question}}</p>
+                <button onclick="answered(1)">{{one}}</button>
+                <button onclick="answered(2)">{{two}}</button>
+                <button onclick="answered(3)">{{three}}</button>
+                <button onclick="answered(3)">{{four}}</button>
+            </script>
+
+            <script id="scene3-template" type="text/x-handlebars-template">
+                <p>test</p>
+            </script>
+
+            <div id="output">
+
+            </div>
+        </div>
+    </body>
+</html>
