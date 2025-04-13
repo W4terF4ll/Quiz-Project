@@ -25,9 +25,9 @@
             </script>
 
             <script id="scene2-template" type="text/x-handlebars-template">
-                <p>Time: <span id="timer">0:00</span></p>
-                <p>Question {{qnum}}</p>
-                <p>{{qcorrect}} / {{qtotal}}</p>
+                <p style="display: inline-block; margin-right: 60px;">Time: <span id="timer">0:00</span></p>
+                <p style="display: inline-block; margin-right: 80px;">Question {{qnum}}</p>
+                <p style="display: inline-block;">{{qcorrect}} / {{qtotal}}</p>
                 <p>{{question}}</p>
                 <button onclick="answered(1)">{{{one}}}</button>
                 <button onclick="answered(2)">{{{two}}}</button>
@@ -41,7 +41,7 @@
             </script>
 
             <script id="scene4-template" type="text/x-handlebars-template">
-                <p>Correct!</p>
+                <p style="margin: 0px">Correct!</p>
             </script>
 
             <script id="scene5-template" type="text/x-handlebars-template">
