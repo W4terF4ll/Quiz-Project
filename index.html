@@ -1,5 +1,6 @@
 <html>
     <head>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" media="screen" href="interface.css" />
 		<script type="text/javascript" src="main.js"> </script>
 		<meta charset="UTF-8">
@@ -10,12 +11,12 @@
         <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.min.js"></script>
     </head>
     <body>
-        <div>
+        <div class="container h-100">
             <script id="scene1-template" type="text/x-handlebars-template">
                 <form id="quiz-form">
                     <label>Name: </label>
                     <input type="text" name="name">
-                    <select>
+                    <select name="type">
                         <option value="python">Python Quiz</option>
                         <option value="HTML">HTML Quiz</option>
                     </select>
@@ -24,19 +25,41 @@
             </script>
 
             <script id="scene2-template" type="text/x-handlebars-template">
+                <p>Time: <span id="timer">0:00</span></p>
+                <p>Question {{qnum}}</p>
+                <p>{{qcorrect}} / {{qtotal}}</p>
                 <p>{{question}}</p>
-                <button onclick="answered(1)">{{one}}</button>
-                <button onclick="answered(2)">{{two}}</button>
-                <button onclick="answered(3)">{{three}}</button>
-                <button onclick="answered(3)">{{four}}</button>
+                <button onclick="answered(1)">{{{one}}}</button>
+                <button onclick="answered(2)">{{{two}}}</button>
+                <button onclick="answered(3)">{{{three}}}</button>
+                <button onclick="answered(4)">{{{four}}}</button>
             </script>
 
             <script id="scene3-template" type="text/x-handlebars-template">
-                <p>test</p>
+                <p>{{exp}}</p>
+                <button onclick="getQuestion()">Got It</button>
             </script>
 
-            <div id="output">
+            <script id="scene4-template" type="text/x-handlebars-template">
+                <p>Correct!</p>
+            </script>
 
+            <script id="scene5-template" type="text/x-handlebars-template">
+                <p>Congratulations {{name}}, You passed the quiz!</p>
+                <button onclick="">Retry</button>
+                <button onclick="loadHome()">Home</button>
+            </script>
+
+            <script id="scene6-template" type="text/x-handlebars-template">
+                <p>Sorry {{name}}, you failed the quiz.</p>
+                <button onclick="loadQuiz()">Retry</button>
+                <button onclick="loadHome()">Home</button>
+            </script>
+
+            <div class="row h-100 justify-content-center align-items-center">
+                <div id="output" class="col-6 text-center bg-light border p-4 mx-auto">
+
+                </div>
             </div>
         </div>
     </body>
